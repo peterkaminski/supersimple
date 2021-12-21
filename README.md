@@ -4,7 +4,7 @@
 
 Super Simple helps create static websites.  It reads HTML files in a `templates` directory and combines them using Jinja2, and writes the output files to a `site` directory.
 
-The process is a little inverted from a standard static site generator.  There is no content management or list of files; Super Simple just reads any HTML files in the `templates` directory (as long as they don't start with `.` or `_`), and sends them through Jinja2.  The output files are written to the `site` directory.
+The process is a little inverted from a standard static site generator.  There is no content management or list of content files; Super Simple just reads any HTML files in the `templates` directory (as long as they don't start with `.` or `_`), and sends them through Jinja2.  The resulting output files are written to the `site` directory.
 
 The HTML files can `include` partials (which are HTML files that start with the underscore character,  `_`) using the syntax:
 
@@ -35,7 +35,7 @@ pip install -r requirements.txt
 
 There are files for a simple website included in this repository, in the `templates` and `site` directories. You can remove them and replace them with your own.
 
-Pro tip: add the filenames of the HTML files in `templates` to the `.gitignore` file in `site`. That will help keep you from getting confused about which HTML files to edit.
+Pro tip: add the filenames of the HTML files in your `templates` directory to the `.gitignore` file in `site`. That will help keep you from getting confused about which HTML files to edit.
 
 ## Running Locally
 
@@ -73,4 +73,4 @@ Super Simple is free and unencumbered software released into the public domain. 
 
 Central repository: <https://github.com/peterkaminski/supersimple>
 
-The sample site included with Super Simple includes the "Me" website from https://html5rocket.github.io/ and a favicon set that uses graphics from Twitter Twemoji.  See the "administration/me" and "administration/favicon" directories for more information.
+The sample site included with Super Simple includes the "Me" website from <https://html5rocket.github.io/> and a favicon set that uses graphics from Twitter Twemoji.  See the "administration/me" and "administration/favicon" directories for more information.
