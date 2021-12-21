@@ -1,0 +1,7 @@
+[build]
+  ignore = "/bin/false"
+  publish = "site"
+  command = "./supersimple.py"
+
+[build.environment]
+  PYTHON_VERSION = "3.8"
