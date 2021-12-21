@@ -71,6 +71,6 @@ The included `netlify.toml` file will set up everything necessary for Netlify to
 
 Super Simple is free and unencumbered software released into the public domain. See the UNLICENSE file for details.
 
-Central repository: <https://github.com/peterkaminski/supersimple
+Central repository: <https://github.com/peterkaminski/supersimple>
 
 The sample site included with Super Simple includes the "Me" website from https://html5rocket.github.io/ and a favicon set that uses graphics from Twitter Twemoji.  See the "administration/me" and "administration/favicon" directories for more information.
