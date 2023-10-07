@@ -59,7 +59,7 @@ def main():
                     if not args.quiet:
                         print(f"Reading '{Path(root) / file}'")
 
-                    html = j.get_template(file).render(
+                    html = j.get_template(str(Path(path) / file)).render(
                         output_filename=file,
                         build_time_iso = build_time_iso,
                         build_time_human = build_time_human,
