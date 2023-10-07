@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-# Super Simple Static Site Generator in Python v1.1.1 - https://github.com/peterkaminski/supersimple
+# Super Simple Static Site Generator in Python v2.0.0 - https://github.com/peterkaminski/supersimple
 # This is free and unencumbered software released into the public domain.
 
 import argparse
