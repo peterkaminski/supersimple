@@ -1,0 +1,22 @@
+{% set title = "" %}
+{% include '_header.html' %}
+  <!-- this file is {{ output_filename }} -->
+  {% if output_filename == 'index.html' %}<!-- this is the home page -->{% endif %}
+
+  <h1>This is the Sub Page</h1>
+
+  <p>This is the Sub Page, a dedicated section designed to dive deeper
+  into specific topics and provide detailed insights. Whether you're
+  looking for in-depth analyses, extended articles, or specialized
+  resources, you've come to the right place. We ensure each topic is
+  well-researched and presented in an easily digestible format.</p>
+
+  <p>This part of the website is where we go beyond the surface and
+  uncover nuances, offering our visitors a comprehensive understanding
+  of each subject. As you explore, you'll find various tools and
+  resources to assist your journey. We believe in empowering our
+  readers, and this section stands testament to that commitment.</p>
+
+  <a href="/index.html">Back to Home Page</a>
+
+{% include '_footer.html' %}
