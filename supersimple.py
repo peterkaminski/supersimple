@@ -5,12 +5,16 @@
 
 import argparse
 import os
+import logging
 import traceback
 
 import datetime
 from pathlib import Path
 
 import jinja2
+
+# initialize logging
+logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
 # set up argparse
 def init_argparse():
@@ -27,16 +31,17 @@ def jinja2_environment(path_to_templates):
     )
 
 def main():
-    argparser = init_argparse();
-    args = argparser.parse_args();
+    argparser = init_argparse()
+    args = argparser.parse_args()
+
+    if args.quiet:
+        logging.getLogger().setLevel(logging.ERROR)
 
     # remember paths
     dir_site = os.path.abspath(args.site)
     dir_templates = os.path.abspath(args.templates)
-    if not args.quiet:
-        print(f"Directory for HTML templates to process: '{dir_templates}'")
-        print(f"Directory for website output: '{dir_site}'")
-        print()
+    logging.info(f"Directory for HTML templates to process: '{dir_templates}'")
+    logging.info(f"Directory for website output: '{dir_site}'")
 
     # get a Jinja2 environment
     j = jinja2_environment(dir_templates)
@@ -56,26 +61,25 @@ def main():
                 os.mkdir(Path(dir_site) / path)
             for file in files:
                 if file.lower().endswith('.html'):
-                    if not args.quiet:
-                        print(f"Reading '{Path(root) / file}'")
+                    logging.info(f"Reading '{Path(root) / file}'")
 
                     html = j.get_template(str(Path(path) / file)).render(
-                        output_filename=file,
+                        output_filename = file,
                         build_time_iso = build_time_iso,
                         build_time_human = build_time_human,
                         build_time_us = build_time_us,
                     )
                     (Path(dir_site) / path / file).write_text(html)
 
-                    if not args.quiet:
-                        print(f"Wrote '{Path(dir_site) / path / file}'")
-                        print()
+                    logging.info(f"Wrote '{Path(dir_site) / path / file}'")
 
+    except jinja2.exceptions.TemplateNotFound as e:
+        logging.error(f"Template not found: {e}")
     except Exception as e:
-        traceback.print_exc(e)
+        logging.error(f"An error occurred: {e}")
+        logging.debug(traceback.format_exc())
 
-    if not args.quiet:
-        print("Done.")
+    logging.info("Done.")
 
 if __name__ == "__main__":
     exit(main())
