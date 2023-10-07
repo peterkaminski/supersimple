@@ -35,7 +35,7 @@ pip install -r requirements.txt
 
 There are files for a simple website included in this repository, in the `templates` and `site` directories. You can remove them and replace them with your own.
 
-Pro tip: add the filenames of the HTML files in your `templates` directory to the `.gitignore` file in `site`. That will help keep you from getting confused about which HTML files to edit.
+The `.gitignore` file in `site` is set to ignore all HTML files in `site`. It's meant to help keep you from getting confused about which HTML files to edit; you should edit the files in `template`, and any files in `template` will overwrite any files in `site` when you run Super Simple.
 
 ## Running Locally
 
@@ -73,4 +73,4 @@ Super Simple is free and unencumbered software released into the public domain. 
 
 Central repository: <https://github.com/peterkaminski/supersimple>
 
-The sample site included with Super Simple includes the "Me" website from <https://html5rocket.github.io/> and a favicon set that uses graphics from Twitter Twemoji.  See the "administration/me" and "administration/favicon" directories for more information.
+The favicon set in the included demonstration site uses an image from Twitter Twemoji.  See the "administration/favicon" directory for more information.
